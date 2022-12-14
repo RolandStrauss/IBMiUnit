@@ -2,6 +2,10 @@
 
 An RPGLE unit testing framework 
 
+## Why does this fork exist?
+
+It exists to ensure that the project can be built with a single command, which also includes handling external dependencies (like [arraylist](https://github.com/OSSILE/OSSILE/blob/master/main/arraylist/README.md)). The code has also been reorganised to make use of `.rpgleinc` and lowercase file names as defined in [this structure guide](https://halcyon-tech.github.io/docs/#/pages/developing/local/structure).
+
 ## Installation
 
 ### Base
