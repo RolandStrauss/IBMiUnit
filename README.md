@@ -4,11 +4,17 @@ An RPGLE unit testing framework
 
 ## Installation
 
+### Base
+
 1. Clone this repository: `git clone https://github.com/worksofliam/IBMiUnit.git`
 2. Change directory into it: `cd IBMiUnit`
 3. Use `gmake` (on yum as `make-gnu.ppc64`) to build IBMiUnit.
 
 You can keep up-to-date with IBMiUnit by pulling from the repository and re-building.
+
+### Sample tests
+
+Use `gmake tests` to build the test cases.
 
 ## Examples
 
