@@ -20,7 +20,7 @@ help:
 	@echo "\tgmake all TARGET=V7R2M0   - Specifify target object version."
 	@echo ""
 
-all: $(TGTLIB).lib ibmiunit.srvpgm ibmiunit.bnddir runtest.rpglepgm ibmiuidsp.rpglepgm ibmiuiint.rpglepgm
+all: $(TGTLIB).lib ibmiunit.msgf ibmiunit.srvpgm ibmiunit.bnddir runtest.rpglepgm ibmiuidsp.rpglepgm ibmiuiint.rpglepgm
 	@echo "Application built!"
 
 ibmiunit.srvpgm: ibmiunit.rpglemod arraylist.rpglemod message.rpglemod
@@ -69,6 +69,11 @@ runtest.rpglepgm: runtest.cmd ibmiunit.bnddir
 	# Basically do nothing..
 	@echo ""
 	@touch $@
+
+ibmiunit.msgf:
+	-system -q "DLTMSGF MSGF($(TGTLIB)/IBMIUNIT)"
+	-system -q "CRTMSGF MSGF($(TGTLIB)/IBMIUNIT) TEXT('IBMiUnit messages')"
+	-system -q "ADDMSGD MSGID(TST0000) MSGF($(TGTLIB)/IBMIUNIT) MSG('IBMiUnit v1.1 build $BUILD')"
 	
 %.lib:
 	-system $(SYSTEMOPT) "CRTLIB $(TGTLIB)"
