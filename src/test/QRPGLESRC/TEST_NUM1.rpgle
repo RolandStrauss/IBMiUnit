@@ -4,10 +4,10 @@
 // Make sure the numberOfXxx calculations are correct
 //
 
-/copy '../../main/QRPGLESRC/IBMiUnit_h.rpgle'
+/copy '../../main/QRPGLESRC/IBMiUnit.rpgleinc'
 
 /define IBMiUi_noMain
-/copy '../../main/QRPGLESRC/IBMiUi_h.rpgle'
+/copy '../../main/QRPGLESRC/IBMiUi.rpgleinc'
 
 
 // initialize the test fixtures

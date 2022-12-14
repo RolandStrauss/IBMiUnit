@@ -4,8 +4,8 @@
 // Test the behavior of the assertOn() and assertOff() sub-procedures.
 //
 
-/copy '../../main/QRPGLESRC/IBMiUnit_h.rpgle'
-/copy '../../main/QRPGLESRC/MESSAGE_H.rpgle'
+/copy '../../main/QRPGLESRC/IBMiUnit.rpgleinc'
+/copy '../../main/QRPGLESRC/MESSAGE.rpgleinc'
 
 
 // initialize the test fixtures

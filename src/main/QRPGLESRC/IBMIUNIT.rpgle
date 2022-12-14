@@ -23,13 +23,13 @@ ctl-opt  bndDir( 'OSSILE/OSSILE' );
 ctl-opt  datFmt( *iso )  timFmt( *iso );
 ctl-opt  noMain;
 
-/copy 'src/main/qhsrc/ibmiunit_h.rpgle'
+/copy 'src/main/qhsrc/ibmiunit.rpgleinc'
 
 /define IBMiUi_noMain
-/copy 'src/main/qhsrc/ibmiui_h.rpgle'
+/copy 'src/main/qhsrc/ibmiui.rpgleinc'
 
-/copy 'src/main/qhsrc/arraylist_h.rpgle'
-/copy 'src/main/qhsrc/message_h.rpgle'
+/copy 'src/main/qhsrc/arraylist.rpgleinc'
+/copy 'src/main/qhsrc/message.rpgleinc'
 
 dcl-ds ui_t qualified template;
    setup            pointer( *proc );

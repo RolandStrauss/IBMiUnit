@@ -82,9 +82,8 @@
      D   pos                         10U 0 const
      D   pDownBy                     10I 0 const options(*nopass)
 
-      /include 'src/main/qhsrc/arraylist_h.rpgle'
-      /include 'src/main/qhsrc/libc_h.rpgle'
-
+      /include 'src/main/qhsrc/arraylist.rpgleinc'
+      /include 'src/main/qhsrc/libc.rpgleinc'
 
       *-------------------------------------------------------------------------
       * Constants

@@ -6,11 +6,11 @@ ctl-opt bndDir( 'QC2LE' );
 // Make sure IBMiUnit catches sub-procedure errors.
 //
 
-/copy '../../main/QRPGLESRC/IBMiUnit_h.rpgle'
-/copy '../../main/QRPGLESRC/MESSAGE_H.rpgle'
+/copy '../../main/QRPGLESRC/IBMiUnit.rpgleinc'
+/copy '../../main/QRPGLESRC/MESSAGE.rpgleinc'
 
 /define IBMiUi_noMain
-/copy '../../main/QRPGLESRC/IBMiUi_h.rpgle'
+/copy '../../main/QRPGLESRC/IBMiUi.rpgleinc'
 
 
 // initialize the test fixtures

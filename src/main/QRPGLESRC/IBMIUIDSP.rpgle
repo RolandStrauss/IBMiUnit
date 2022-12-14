@@ -21,7 +21,7 @@ dcl-pr main extPgm( 'IBMIUIDSP' );
    dcl-parm isStopRequested  pointer( *proc );
 end-pr;
 
-/copy 'src/main/qhsrc/ibmiui_h.rpgle'
+/copy 'src/main/qhsrc/ibmiui.rpgleinc'
 
 setup         = %pAddr( IBMiUnitui_setup );
 done          = %pAddr( IBMiUnitui_done );

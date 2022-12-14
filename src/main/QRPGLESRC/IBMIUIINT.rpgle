@@ -34,8 +34,8 @@ dcl-s currentTestCase  int( 10 );
 dcl-s totalTestCases   int( 10 );
 dcl-s suiteName        varchar( 10 );
 
-/copy 'src/main/qhsrc/ibmiui_h.rpgle'
-/copy 'src/main/qhsrc/message_h.rpgle'
+/copy 'src/main/qhsrc/ibmiui.rpgleinc'
+/copy 'src/main/qhsrc/message.rpgleinc'
 
 setup         = %pAddr( IBMiUnitui_setup );
 done          = %pAddr( IBMiUnitui_done );
