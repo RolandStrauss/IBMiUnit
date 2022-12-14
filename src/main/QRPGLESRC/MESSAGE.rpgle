@@ -21,7 +21,7 @@ ctl-opt nomain;
 //
 // Prototypes
 //
-/include 'message_h.rpgle'
+/include 'src/main/qhsrc/message_h.rpgle'
 
 dcl-pr QMHRCVPM extpgm('QMHRCVPM');
   msgInfo char(32565) options(*varsize);

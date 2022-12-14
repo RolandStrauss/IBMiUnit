@@ -20,20 +20,20 @@ help:
 	@echo "\tgmake all TARGET=V7R2M0   - Specifify target object version."
 	@echo ""
 
-all: $(TGTLIB).lib IBMIUNIT.srvpgm IBMIUNIT.bnddir RUNTEST.rpglepgm IBMIUIDSP.rpglepgm IBMIUIINT.rpglepgm
+all: $(TGTLIB).lib ibmiunit.srvpgm ibmiunit.bnddir runtest.rpglepgm ibmiuidsp.rpglepgm ibmiuiint.rpglepgm
 	@echo "Application built!"
 
-IBMIUNIT.srvpgm: IBMIUNIT.rpglemod ARRAYLIST.rpglemod MESSAGE.rpglemod
+ibmiunit.srvpgm: ibmiunit.rpglemod arraylist.rpglemod message.rpglemod
 
-MESSAGE.srvpgm: MESSAGE.rpglemod
+message.srvpgm: message.rpglemod
 
-IBMIUNIT.bnddir: IBMIUNIT.entry MESSAGE.entry
+ibmiunit.bnddir: ibmiunit.entry message.entry
 
-RUNTEST.rpglepgm: RUNTEST.cmd IBMIUNIT.bnddir
+runtest.rpglepgm: runtest.cmd ibmiunit.bnddir
 
 ## General targets
 
-%.rpglemod: src/main/QRPGLESRC/%.rpgle
+%.rpglemod: src/main/qrpglesrc/%.rpgle
 	system $(SYSTEMOPT) "CHGATR OBJ('$<') ATR(*CCSID) VALUE(1252)"
 	system $(SYSTEMOPT) "CRTRPGMOD MODULE($(TGTLIB)/$*) SRCSTMF('$<') TGTRLS($(TARGET)) DBGVIEW($(DBGVIEW))"
 	touch $@
