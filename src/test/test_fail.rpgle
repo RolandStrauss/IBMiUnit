@@ -12,8 +12,8 @@ ctl-opt bndDir( 'QC2LE' );
 // and should not be done by any other test over this library.
 //
 
-/copy '../../main/QRPGLESRC/IBMiUnit.rpgleinc'
-/copy '../../main/QRPGLESRC/MESSAGE.rpgleinc'
+/copy 'src/main/qhsrc/ibmiunit.rpgleinc'
+/copy 'src/main/qhsrc/message.rpgleinc'
 
 
 // initialize the test fixtures

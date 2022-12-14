@@ -10,8 +10,8 @@ ctl-opt bndDir( 'QC2LE' );
 // model for other tests.
 //
 
-/copy '../../main/QRPGLESRC/IBMiUnit.rpgleinc'
-/copy '../../main/QRPGLESRC/MESSAGE.rpgleinc'
+/copy 'src/main/qhsrc/ibmiunit.rpgleinc'
+/copy 'src/main/qhsrc/message.rpgleinc'
 
 dcl-s callHistory  varchar( 2000 );
 

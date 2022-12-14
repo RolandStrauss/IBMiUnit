@@ -5,7 +5,7 @@ SYSTEMOPT=-s
 DBGVIEW=*SOURCE
 TARGET=V7R2M0
 
-TESTFILES:=$(notdir $(shell ls src/test/QRPGLESRC/*.rpgle))
+TESTFILES:=$(notdir $(shell ls src/test/*.rpgle))
 TESTS:= $(patsubst %.rpgle,%.test,$(TESTFILES))
 
 help:
@@ -75,7 +75,7 @@ runtest.rpglepgm: runtest.cmd ibmiunit.bnddir
 	system $(SYSTEMOPT) "CHGOBJOWN OBJ(QSYS/$(TGTLIB)) OBJTYPE(*LIB) NEWOWN($(OBJOWN)) CUROWNAUT(*SAME)"
 	@touch $@
 
-%.test: src/test/QRPGLESRC/%.rpgle
+%.test: src/test/%.rpgle
 	@echo "Building $(TGTLIB)/$*"
 	system $(SYSTEMOPT) "CHGATR OBJ('$<') ATR(*CCSID) VALUE(1252)"
 	system $(SYSTEMOPT) "CRTBNDRPG PGM($(TGTLIB)/$*) SRCSTMF('$<') TGTRLS($(TARGET)) DBGVIEW($(DBGVIEW)) BNDDIR($(TGTLIB)/IBMIUNIT) DFTACTGRP(*NO)"

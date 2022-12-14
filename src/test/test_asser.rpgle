@@ -4,7 +4,7 @@
 // Test the behavior of the assert() sub-procedures.
 //
 
-/copy '../../main/QRPGLESRC/IBMiUnit.rpgleinc'
+/copy 'src/main/qhsrc/ibmiunit.rpgleinc'
 
 
 // initialize the test fixtures

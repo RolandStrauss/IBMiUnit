@@ -6,8 +6,8 @@ ctl-opt datFmt( *iso ) timFmt( *iso );
 // Test the behavior of the assertTimestampEquals() and assertTimestampNotEquals() sub-procedures.
 //
 
-/copy '../../main/QRPGLESRC/IBMiUnit.rpgleinc'
-/copy '../../main/QRPGLESRC/MESSAGE.rpgleinc'
+/copy 'src/main/qhsrc/ibmiunit.rpgleinc'
+/copy 'src/main/qhsrc/message.rpgleinc'
 
 
 // initialize the test fixtures

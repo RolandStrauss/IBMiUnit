@@ -4,8 +4,7 @@
 // Test the behavior of the IBMiUnit library.
 //
 
-/copy '../../main/QRPGLESRC/IBMiUnit.rpgleinc'
-
+/copy 'src/main/qhsrc/ibmiunit.rpgleinc'
 
 // initialize the test fixtures
 

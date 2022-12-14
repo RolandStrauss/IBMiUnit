@@ -4,17 +4,21 @@
 // Make sure the numberOfXxx calculations are correct
 //
 
-/copy '../../main/QRPGLESRC/IBMiUnit.rpgleinc'
+/copy 'src/main/qhsrc/ibmiunit.rpgleinc'
 
 /define IBMiUi_noMain
-/copy '../../main/QRPGLESRC/IBMiUi.rpgleinc'
+/copy 'src/main/qhsrc/ibmiui.rpgleinc'
 
 
 // initialize the test fixtures
 
-IBMiUnit_setupSuite( 'IBMiUnit numberOfXxx calculations #3'
-                   : *null : *null 
-                   : *null : %pAddr( checkNumbers ) );
+IBMiUnit_setupSuite( 'IBMiUnit numberOfXxx calculations #1'
+                   : *null : *null
+				   : *null : %pAddr( checkNumbers ) );
+
+IBMiUnit_addTestSuite( 'TEST_NUM3' );
+IBMiUnit_addTestSuite( 'TEST_NUM4' );
+IBMiUnit_addTestSuite( 'TEST_NUM5' );
 
 IBMiUnit_teardownSuite();
 
@@ -33,9 +37,8 @@ dcl-proc checkNumbers;
    end-pi;
 
    assertNumericEquals( 0 : testSuite.numberOfCases            : 'numberOfCases' );
-   assertNumericEquals( 0 : testSuite.numberOfSuites           : 'numberOfSuites' );
-   assertNumericEquals( 0 : testSuite.numberOfDescendantCases  : 'numberOfDescendantCases' );
+   assertNumericEquals( 3 : testSuite.numberOfSuites           : 'numberOfSuites' );
+   assertNumericEquals( 5 : testSuite.numberOfDescendantCases  : 'numberOfDescendantCases' );
    assertNumericEquals( 0 : testSuite.numberOfDescendantSuites : 'numberOfDescendantSuites' );
 
 end-proc;
- 

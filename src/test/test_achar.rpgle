@@ -4,8 +4,8 @@
 // Test the behavior of the assertCharEquals() and assertCharNotEquals() sub-procedures.
 //
 
-/copy '../../main/QRPGLESRC/IBMiUnit.rpgleinc'
-/copy '../../main/QRPGLESRC/message.rpgleinc'
+/copy 'src/main/qhsrc/ibmiunit.rpgleinc'
+/copy 'src/main/qhsrc/message.rpgleinc'
 
 
 // initialize the test fixtures

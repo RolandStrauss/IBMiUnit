@@ -15,7 +15,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
 //-------------------------------------------------------------------------------------------------
 
  /copy TextUtil_H
- /copy IBMiUnit/QRPGLESRC,IBMiUnit_H
+ /copy 'src/main/qhsrc/ibmiunit.rpgleinc'
  /copy ArrayLst_H
 
  dcl-s arrayList pointer;
@@ -394,7 +394,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
  dcl-proc removeAccents_a;
 
     assertCharEquals( 'aaaaaaAAAAAA'
-                    : removeAccents( 'âäàáãåÂÄÀÁÃÅ' )
+                    : removeAccents( 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½' )
                     );
 
  end-proc;
@@ -402,7 +402,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
  dcl-proc removeAccents_b;
 
     assertCharEquals( 'ss'
-                    : removeAccents( 'ß' )
+                    : removeAccents( 'ï¿½' )
                     );
 
  end-proc;
@@ -410,7 +410,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
  dcl-proc removeAccents_c;
 
     assertCharEquals( 'cC'
-                    : removeAccents( 'çÇ' )
+                    : removeAccents( 'ï¿½ï¿½' )
                     );
 
  end-proc;
@@ -418,7 +418,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
  dcl-proc removeAccents_e;
 
     assertCharEquals( 'eeeeEEEE'
-                    : removeAccents( 'éêëèÉÊËÈ' )
+                    : removeAccents( 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½' )
                     );
 
  end-proc;
@@ -426,7 +426,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
  dcl-proc removeAccents_i;
 
     assertCharEquals( 'iiiiIIII'
-                    : removeAccents( 'íîïìÍÎÏÌ' )
+                    : removeAccents( 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½' )
                     );
 
  end-proc;
@@ -434,7 +434,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
  dcl-proc removeAccents_n;
 
     assertCharEquals( 'nN'
-                    : removeAccents( 'ñÑ' )
+                    : removeAccents( 'ï¿½ï¿½' )
                     );
 
  end-proc;
@@ -442,7 +442,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
  dcl-proc removeAccents_o;
 
     assertCharEquals( 'oooooOOOOO'
-                    : removeAccents( 'ôöòóõÔÖÒÓÕ' )
+                    : removeAccents( 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½' )
                     );
 
  end-proc;
@@ -450,7 +450,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
  dcl-proc removeAccents_u;
 
     assertCharEquals( 'uuuuUUUU'
-                    : removeAccents( 'ûüùúÛÜÙÚ' )
+                    : removeAccents( 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½' )
                     );
 
  end-proc;
@@ -458,7 +458,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
  dcl-proc removeAccents_y;
 
     assertCharEquals( 'yYyY'
-                    : removeAccents( 'ýÝÿ' )
+                    : removeAccents( 'ï¿½ï¿½ï¿½' )
                     );
 
  end-proc;
@@ -505,7 +505,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
 
  dcl-proc removeUnprintable_hex4;
 
-    assertCharEquals( ' âäàáãåçñ.<(+|'
+    assertCharEquals( ' ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.<(+|'
                     : removeUnprintable( x'404142434445464748494A4B4C4D4E4F' )
                     );
 
@@ -513,7 +513,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
 
  dcl-proc removeUnprintable_hex5;
 
-    assertCharEquals( '&éêëèíîïìß!$*);¬'
+    assertCharEquals( '&ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!$*);ï¿½'
                     : removeUnprintable( x'505152535455565758595A5B5C5D5E5F' )
                     );
 
@@ -521,7 +521,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
 
  dcl-proc removeUnprintable_hex6;
 
-    assertCharEquals( '-/ÂÄÀÁÃÅÇÑ,%_>?'
+    assertCharEquals( '-/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,%_>?'
                     : removeUnprintable( x'606162636465666768696A6B6C6D6E6F' )
                     );
 
@@ -529,7 +529,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
 
  dcl-proc removeUnprintable_hex7;
 
-    assertCharEquals( 'øÉÊËÈÍÎÏÌ`:#@''="'
+    assertCharEquals( 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`:#@''="'
                     : removeUnprintable( x'707172737475767778797A7B7C7D7E7F' )
                     );
 
@@ -537,7 +537,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
 
  dcl-proc removeUnprintable_hex8;
 
-    assertCharEquals( 'Øabcdefghiý'
+    assertCharEquals( 'ï¿½abcdefghiï¿½'
                     : removeUnprintable( x'808182838485868788898A8B8C8D8E8F' )
                     );
 
@@ -545,7 +545,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
 
  dcl-proc removeUnprintable_hex9;
 
-    assertCharEquals( 'jklmnopqræÆ'
+    assertCharEquals( 'jklmnopqrï¿½ï¿½'
                     : removeUnprintable( x'909192939495969798999A9B9C9D9E9F' )
                     );
 
@@ -553,7 +553,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
 
  dcl-proc removeUnprintable_hexA;
 
-    assertCharEquals( '~stuvwxyzÝ'
+    assertCharEquals( '~stuvwxyzï¿½'
                     : removeUnprintable( x'A0A1A2A3A4A5A6A7A8A9AAABACADAEAF' )
                     );
 
@@ -561,7 +561,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
 
  dcl-proc removeUnprintable_hexB;
 
-    assertCharEquals( '^£¥[]'
+    assertCharEquals( '^ï¿½ï¿½[]'
                     : removeUnprintable( x'B0B1B2B3B4B5B6B7B8B9BABBBCBDBEBF' )
                     );
 
@@ -569,7 +569,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
 
  dcl-proc removeUnprintable_hexC;
 
-    assertCharEquals( '{ABCDEFGHIôöòóõ'
+    assertCharEquals( '{ABCDEFGHIï¿½ï¿½ï¿½ï¿½ï¿½'
                     : removeUnprintable( x'C0C1C2C3C4C5C6C7C8C9CACBCCCDCECF' )
                     );
 
@@ -577,7 +577,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
 
  dcl-proc removeUnprintable_hexD;
 
-    assertCharEquals( '}JKLMNOPQRûüùúÿ'
+    assertCharEquals( '}JKLMNOPQRï¿½ï¿½ï¿½ï¿½ï¿½'
                     : removeUnprintable( x'D0D1D2D3D4D5D6D7D8D9DADBDCDDDEDF' )
                     );
 
@@ -585,7 +585,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
 
  dcl-proc removeUnprintable_hexE;
 
-    assertCharEquals( '\STUVWXYZÔÖÒÓÕ'
+    assertCharEquals( '\STUVWXYZï¿½ï¿½ï¿½ï¿½ï¿½'
                     : removeUnprintable( x'E0E1E2E3E4E5E6E7E8E9EAEBECEDEEEF' )
                     );
 
@@ -593,7 +593,7 @@ ctl-opt bndDir( 'TEXTUTILS' : 'IBMIUNIT/IBMIUNIT' : 'OSSILE/OSSILE' );
 
  dcl-proc removeUnprintable_hexF;
 
-    assertCharEquals( '0123456789ÛÜÙÚ' + x'FF'
+    assertCharEquals( '0123456789ï¿½ï¿½ï¿½ï¿½' + x'FF'
                     : removeUnprintable( x'F0F1F2F3F4F5F6F7F8F9FAFBFCFDFEFF' )
                     );
 
